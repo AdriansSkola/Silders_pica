@@ -4,15 +4,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import javax.swing.JCheckBox;
 import java.awt.Font;
-import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
-import javax.swing.JTree;
-import javax.swing.JList;
-import javax.swing.UIManager;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class SakumaFrame extends JFrame {
 
@@ -44,12 +41,20 @@ public class SakumaFrame extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Picērija Šermando");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(new Color(170, 170, 180));
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel.setBounds(161, 32, 147, 14);
+		lblNewLabel.setBounds(161, 32, 137, 14);
 		contentPane.add(lblNewLabel);
 		
 		JButton pasutitPicasBtn = new JButton("Pasūtīt picas");
+		pasutitPicasBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Sutisana sutijums = new Sutisana();
+				sutijums.setVisible(true);
+				SakumaFrame.this.dispose();
+			}
+		});
 		pasutitPicasBtn.setForeground(new Color(180, 180, 180));
 		pasutitPicasBtn.setBackground(new Color(50, 50, 50));
 		pasutitPicasBtn.setFont(new Font("Segoe UI", Font.BOLD, 12));
@@ -57,6 +62,13 @@ public class SakumaFrame extends JFrame {
 		contentPane.add(pasutitPicasBtn);
 		
 		JButton apskatPasutBtn = new JButton("Apskatīt pasūtījumus");
+		apskatPasutBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Pasutijumi pasutijums = new Pasutijumi();
+				pasutijums.setVisible(true); 
+				SakumaFrame.this.dispose();
+			}
+		});
 		apskatPasutBtn.setForeground(new Color(180, 180, 180));
 		apskatPasutBtn.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		apskatPasutBtn.setBackground(new Color(50, 50, 50));
