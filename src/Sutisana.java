@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -45,6 +46,10 @@ public class Sutisana extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(70, 70, 70));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		ButtonGroup picasIzmers = new ButtonGroup();
+		ButtonGroup picasMerces = new ButtonGroup();
+		ButtonGroup esanasVieta = new ButtonGroup();
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -66,6 +71,7 @@ public class Sutisana extends JFrame {
 		merceKecups.setForeground(new Color(180, 180, 180));
 		merceKecups.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		merceKecups.setBounds(531, 48, 93, 23);
+		picasMerces.add(merceKecups);
 		contentPane.add(merceKecups);
 		
 		JRadioButton merceBBQ = new JRadioButton("BBQ");
@@ -73,6 +79,7 @@ public class Sutisana extends JFrame {
 		merceBBQ.setForeground(new Color(180, 180, 180));
 		merceBBQ.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		merceBBQ.setBounds(531, 74, 93, 23);
+		picasMerces.add(merceBBQ);
 		contentPane.add(merceBBQ);
 		
 		JRadioButton merceMajon = new JRadioButton("Majonēze");
@@ -80,6 +87,7 @@ public class Sutisana extends JFrame {
 		merceMajon.setForeground(new Color(180, 180, 180));
 		merceMajon.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		merceMajon.setBounds(531, 100, 109, 23);
+		picasMerces.add(merceMajon);
 		contentPane.add(merceMajon);
 		
 		JCheckBox skinkisPap = new JCheckBox("Šķiņķis");
@@ -202,6 +210,7 @@ public class Sutisana extends JFrame {
 		uzVietas.setForeground(new Color(180, 180, 180));
 		uzVietas.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		uzVietas.setBounds(531, 182, 109, 23);
+		esanasVieta.add(uzVietas);
 		contentPane.add(uzVietas);
 		
 		JRadioButton lidziNemsana = new JRadioButton("Līdzi");
@@ -209,6 +218,7 @@ public class Sutisana extends JFrame {
 		lidziNemsana.setForeground(new Color(180, 180, 180));
 		lidziNemsana.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		lidziNemsana.setBounds(531, 208, 109, 23);
+		esanasVieta.add(lidziNemsana);
 		contentPane.add(lidziNemsana);
 		
 		JRadioButton piegUzMajam = new JRadioButton("Piegāde uz mājām | 1,99");
@@ -216,6 +226,7 @@ public class Sutisana extends JFrame {
 		piegUzMajam.setForeground(new Color(180, 180, 180));
 		piegUzMajam.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		piegUzMajam.setBounds(531, 234, 153, 23);
+		esanasVieta.add(piegUzMajam);
 		contentPane.add(piegUzMajam);
 		
 		JLabel izmeruLabel = new JLabel("Picas izmērs");
@@ -230,6 +241,7 @@ public class Sutisana extends JFrame {
 		mazPica.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		mazPica.setBackground(new Color(70, 70, 70));
 		mazPica.setBounds(25, 48, 131, 23);
+		picasIzmers.add(mazPica);
 		contentPane.add(mazPica);
 		
 		JRadioButton vidPica = new JRadioButton("M (vidējā pica) | 8,50€");
@@ -237,6 +249,7 @@ public class Sutisana extends JFrame {
 		vidPica.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		vidPica.setBackground(new Color(70, 70, 70));
 		vidPica.setBounds(25, 74, 139, 23);
+		picasIzmers.add(vidPica);
 		contentPane.add(vidPica);
 		
 		JRadioButton lielPica = new JRadioButton("L (lielā pica) | 10,50€");
@@ -244,6 +257,7 @@ public class Sutisana extends JFrame {
 		lielPica.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		lielPica.setBackground(new Color(70, 70, 70));
 		lielPica.setBounds(25, 100, 131, 23);
+		picasIzmers.add(lielPica);
 		contentPane.add(lielPica);
 		
 		JTextPane orderLogs = new JTextPane();
