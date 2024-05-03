@@ -32,6 +32,7 @@ public class SakumaFrame extends JFrame {
 	public SakumaFrame() {
 		setTitle("Picas Sistēma");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
 		setBounds(100, 100, 485, 280);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(70, 70, 70));

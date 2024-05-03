@@ -37,6 +37,17 @@ public class Sutisana extends JFrame {
 			}
 		});
 	}
+	
+	/*
+	 * krāsas:
+	 * #E4B455
+	 * #AF672D
+	 * #886839
+	 * #58483A
+	 * #597718
+	 * #770D15
+	 * #D3B786
+	 */
 
 	public Sutisana() {
 		setTitle("Picas Sistēma");
