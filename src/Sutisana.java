@@ -2,6 +2,8 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -68,20 +70,20 @@ public class Sutisana extends JFrame {
 		JLabel piedevasLabel = new JLabel("Picas piedevas");
 		piedevasLabel.setForeground(new Color(170, 170, 180));
 		piedevasLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		piedevasLabel.setBounds(274, 26, 111, 14);
+		piedevasLabel.setBounds(296, 26, 111, 14);
 		contentPane.add(piedevasLabel);
 		
 		JLabel picasMercLabel = new JLabel("Picas mērces");
 		picasMercLabel.setForeground(new Color(170, 170, 180));
 		picasMercLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		picasMercLabel.setBounds(531, 27, 103, 14);
+		picasMercLabel.setBounds(514, 26, 103, 14);
 		contentPane.add(picasMercLabel);
 		
 		JRadioButton merceKecups = new JRadioButton("Kečups");
 		merceKecups.setBackground(new Color(70, 70, 70));
 		merceKecups.setForeground(new Color(180, 180, 180));
 		merceKecups.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		merceKecups.setBounds(531, 48, 93, 23);
+		merceKecups.setBounds(514, 47, 93, 23);
 		picasMerces.add(merceKecups);
 		contentPane.add(merceKecups);
 		
@@ -89,7 +91,7 @@ public class Sutisana extends JFrame {
 		merceBBQ.setBackground(new Color(70, 70, 70));
 		merceBBQ.setForeground(new Color(180, 180, 180));
 		merceBBQ.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		merceBBQ.setBounds(531, 74, 93, 23);
+		merceBBQ.setBounds(514, 73, 93, 23);
 		picasMerces.add(merceBBQ);
 		contentPane.add(merceBBQ);
 		
@@ -97,7 +99,7 @@ public class Sutisana extends JFrame {
 		merceMajon.setBackground(new Color(70, 70, 70));
 		merceMajon.setForeground(new Color(180, 180, 180));
 		merceMajon.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		merceMajon.setBounds(531, 100, 109, 23);
+		merceMajon.setBounds(514, 99, 109, 23);
 		picasMerces.add(merceMajon);
 		contentPane.add(merceMajon);
 		
@@ -213,14 +215,14 @@ public class Sutisana extends JFrame {
 		vietaLabel.setForeground(new Color(170, 170, 180));
 		vietaLabel.setBackground(new Color(150, 150, 150));
 		vietaLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		vietaLabel.setBounds(531, 161, 97, 14);
+		vietaLabel.setBounds(514, 140, 97, 14);
 		contentPane.add(vietaLabel);
 		
 		JRadioButton uzVietas = new JRadioButton("Uz vietas");
 		uzVietas.setBackground(new Color(70, 70, 70));
 		uzVietas.setForeground(new Color(180, 180, 180));
 		uzVietas.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		uzVietas.setBounds(531, 182, 109, 23);
+		uzVietas.setBounds(514, 161, 109, 23);
 		esanasVieta.add(uzVietas);
 		contentPane.add(uzVietas);
 		
@@ -228,7 +230,7 @@ public class Sutisana extends JFrame {
 		lidziNemsana.setBackground(new Color(70, 70, 70));
 		lidziNemsana.setForeground(new Color(180, 180, 180));
 		lidziNemsana.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		lidziNemsana.setBounds(531, 208, 109, 23);
+		lidziNemsana.setBounds(514, 187, 109, 23);
 		esanasVieta.add(lidziNemsana);
 		contentPane.add(lidziNemsana);
 		
@@ -236,7 +238,7 @@ public class Sutisana extends JFrame {
 		piegUzMajam.setBackground(new Color(70, 70, 70));
 		piegUzMajam.setForeground(new Color(180, 180, 180));
 		piegUzMajam.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		piegUzMajam.setBounds(531, 234, 153, 23);
+		piegUzMajam.setBounds(514, 213, 153, 23);
 		esanasVieta.add(piegUzMajam);
 		contentPane.add(piegUzMajam);
 		
@@ -277,7 +279,7 @@ public class Sutisana extends JFrame {
 		orderLogs.setForeground(new Color(180, 180, 180));
 		orderLogs.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		orderLogs.setBackground(new Color(50, 50, 50));
-		orderLogs.setBounds(241, 204, 256, 168);
+		orderLogs.setBounds(239, 197, 256, 168);
 		contentPane.add(orderLogs);
 		
 		JButton btnApstiprintPastjumu = new JButton("Apstiprināt pasūtījumu");
@@ -290,7 +292,7 @@ public class Sutisana extends JFrame {
 		JLabel katraPiedeva = new JLabel("Katra piedeva: +0,50€");
 		katraPiedeva.setForeground(new Color(170, 170, 180));
 		katraPiedeva.setFont(new Font("Tahoma", Font.BOLD, 12));
-		katraPiedeva.setBounds(274, 50, 170, 14);
+		katraPiedeva.setBounds(284, 50, 170, 14);
 		contentPane.add(katraPiedeva);
 		
 		JLabel picasIzm = new JLabel("");
@@ -305,5 +307,43 @@ public class Sutisana extends JFrame {
 		senesPap.setBackground(new Color(70, 70, 70));
 		senesPap.setBounds(357, 125, 81, 23);
 		contentPane.add(senesPap);
+		
+		JButton btnAtpakaUzSkumu = new JButton("Atpakaļ uz sākumu");
+		btnAtpakaUzSkumu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SakumaFrame sakumaFrame = new SakumaFrame();
+				sakumaFrame.setVisible(true); 
+				Sutisana.this.dispose();
+			}
+		});
+		btnAtpakaUzSkumu.setForeground(new Color(180, 180, 180));
+		btnAtpakaUzSkumu.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		btnAtpakaUzSkumu.setBackground(new Color(50, 50, 50));
+		btnAtpakaUzSkumu.setBounds(532, 260, 139, 23);
+		contentPane.add(btnAtpakaUzSkumu);
+		
+		mazPica.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Image image = new ImageIcon(this.getClass().getResource("/Images/pizza_maz.png")).getImage();
+				picasIzm.setIcon(new ImageIcon(image));
+			}
+		});
+		
+		vidPica.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Image image = new ImageIcon(this.getClass().getResource("/Images/pizza_vid.png")).getImage();
+				picasIzm.setIcon(new ImageIcon(image));
+			}
+		});
+		
+		lielPica.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Image image = new ImageIcon(this.getClass().getResource("/Images/pizza_liela.png")).getImage();
+				picasIzm.setIcon(new ImageIcon(image));
+			}
+		});
 	}
 }

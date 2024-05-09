@@ -7,7 +7,7 @@ Picas sūtīšanas sistēma, kura ir noderīga īstās dzīves situācijās. :pi
 - [x] Uzsākts lokālais Java projekts.
 - [x] Izveidots pamata UI priekš picas sūtīšanas, sākuma ekrāns un sūtījumu saraksts.
 - [x] Salabots, ka katrā grupā atzīmējās tikai viena poga.
-- [ ] Ievietotas vairākas bildes picas izmēriem (S, M, L).
+- [x] Ievietotas vairākas bildes picas izmēriem (S, M, L).
 - [ ] pievienots skaists un atbilstošs fons priekš UI.
 - [ ] Tika ieviesta jauna funkcionalitāte izveidotajā zarā.
 - [ ] Pabeigta picas sūtījuma aprēķinātājs.
