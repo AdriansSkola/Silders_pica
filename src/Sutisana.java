@@ -149,7 +149,7 @@ public class Sutisana extends JFrame {
 		JLabel cenaLabel = new JLabel("Cena:");
 		cenaLabel.setForeground(new Color(255, 128, 0));
 		cenaLabel.setFont(new Font("Segoe UI", Font.BOLD, 14));
-		cenaLabel.setBounds(557, 353, 46, 14);
+		cenaLabel.setBounds(562, 353, 46, 14);
 		contentPane.add(cenaLabel);
 		
 		JLabel vardsLabel = new JLabel("Vārds:");
@@ -198,47 +198,33 @@ public class Sutisana extends JFrame {
 		contentPane.add(telNrLabel);
 		
 		telNR = new JTextField();
+		telNR.setText("+371");
 		telNR.setForeground(new Color(180, 180, 180));
 		telNR.setBackground(new Color(50, 50, 50));
 		telNR.setColumns(10);
 		telNR.setBounds(116, 352, 103, 20);
 		contentPane.add(telNR);
 		
-		JButton kvitsApst = new JButton("Apstrādāt kvīti");
-		kvitsApst.setForeground(new Color(180, 180, 180));
-		kvitsApst.setBackground(new Color(50, 50, 50));
-		kvitsApst.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		kvitsApst.setBounds(545, 290, 126, 23);
-		contentPane.add(kvitsApst);
-		
 		JLabel vietaLabel = new JLabel("Ēšanas vieta");
 		vietaLabel.setForeground(new Color(170, 170, 180));
 		vietaLabel.setBackground(new Color(150, 150, 150));
 		vietaLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		vietaLabel.setBounds(514, 140, 97, 14);
+		vietaLabel.setBounds(514, 148, 97, 14);
 		contentPane.add(vietaLabel);
 		
 		JRadioButton uzVietas = new JRadioButton("Uz vietas");
 		uzVietas.setBackground(new Color(70, 70, 70));
 		uzVietas.setForeground(new Color(180, 180, 180));
 		uzVietas.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		uzVietas.setBounds(514, 161, 109, 23);
+		uzVietas.setBounds(514, 195, 109, 23);
 		esanasVieta.add(uzVietas);
 		contentPane.add(uzVietas);
 		
-		JRadioButton lidziNemsana = new JRadioButton("Līdzi");
-		lidziNemsana.setBackground(new Color(70, 70, 70));
-		lidziNemsana.setForeground(new Color(180, 180, 180));
-		lidziNemsana.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		lidziNemsana.setBounds(514, 187, 109, 23);
-		esanasVieta.add(lidziNemsana);
-		contentPane.add(lidziNemsana);
-		
-		JRadioButton piegUzMajam = new JRadioButton("Piegāde uz mājām | 1,99");
+		JRadioButton piegUzMajam = new JRadioButton("Piegāde uz mājām +1,99€");
 		piegUzMajam.setBackground(new Color(70, 70, 70));
 		piegUzMajam.setForeground(new Color(180, 180, 180));
 		piegUzMajam.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		piegUzMajam.setBounds(514, 213, 153, 23);
+		piegUzMajam.setBounds(514, 169, 161, 23);
 		esanasVieta.add(piegUzMajam);
 		contentPane.add(piegUzMajam);
 		
@@ -282,7 +268,7 @@ public class Sutisana extends JFrame {
 		orderLogs.setBounds(239, 197, 256, 168);
 		contentPane.add(orderLogs);
 		
-		JButton btnApstiprintPastjumu = new JButton("Apstiprināt pasūtījumu");
+		JButton btnApstiprintPastjumu = new JButton("Iesniegt pasūtījumu");
 		btnApstiprintPastjumu.setForeground(new Color(180, 180, 180));
 		btnApstiprintPastjumu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnApstiprintPastjumu.setBackground(new Color(50, 50, 50));
@@ -297,8 +283,8 @@ public class Sutisana extends JFrame {
 		
 		JLabel picasIzm = new JLabel("");
 		picasIzm.setBounds(37, 140, 103, 103);
-		Image image = new ImageIcon(this.getClass().getResource("/Images/test.png")).getImage();
-		picasIzm.setIcon(new ImageIcon(image));
+		//Image image = new ImageIcon(this.getClass().getResource("/Images/test.png")).getImage();
+		//picasIzm.setIcon(new ImageIcon(image));
 		contentPane.add(picasIzm);
 		
 		JCheckBox senesPap = new JCheckBox("Sēnes");
@@ -319,7 +305,7 @@ public class Sutisana extends JFrame {
 		btnAtpakaUzSkumu.setForeground(new Color(180, 180, 180));
 		btnAtpakaUzSkumu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnAtpakaUzSkumu.setBackground(new Color(50, 50, 50));
-		btnAtpakaUzSkumu.setBounds(532, 260, 139, 23);
+		btnAtpakaUzSkumu.setBounds(531, 290, 139, 23);
 		contentPane.add(btnAtpakaUzSkumu);
 		
 		mazPica.addActionListener(new ActionListener() {
