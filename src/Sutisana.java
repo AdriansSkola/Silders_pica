@@ -20,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 public class Sutisana extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	public double  picasIzm = 0, Piedevas = 0, Piegade = 0, Merce = 0, Cena;
 	private JPanel contentPane;
 	private JTextField CenaBOX;
 	private JTextField vards;
@@ -79,28 +80,52 @@ public class Sutisana extends JFrame {
 		picasMercLabel.setBounds(514, 26, 103, 14);
 		contentPane.add(picasMercLabel);
 		
-		JRadioButton merceKecups = new JRadioButton("Kečups");
+		JRadioButton merceKecups = new JRadioButton("Kečups | 1,00€");
 		merceKecups.setBackground(new Color(70, 70, 70));
 		merceKecups.setForeground(new Color(180, 180, 180));
 		merceKecups.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		merceKecups.setBounds(514, 47, 93, 23);
+		merceKecups.setBounds(514, 47, 103, 23);
 		picasMerces.add(merceKecups);
+		merceKecups.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(merceKecups.isSelected()) {
+					Merce = 1.00;
+				}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
 		contentPane.add(merceKecups);
 		
-		JRadioButton merceBBQ = new JRadioButton("BBQ");
+		JRadioButton merceBBQ = new JRadioButton("BBQ  | 1,00€");
 		merceBBQ.setBackground(new Color(70, 70, 70));
 		merceBBQ.setForeground(new Color(180, 180, 180));
 		merceBBQ.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		merceBBQ.setBounds(514, 73, 93, 23);
 		picasMerces.add(merceBBQ);
+		merceBBQ.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(merceBBQ.isSelected()) {
+					Merce = 1.00;
+				}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
 		contentPane.add(merceBBQ);
 		
-		JRadioButton merceMajon = new JRadioButton("Majonēze");
+		JRadioButton merceMajon = new JRadioButton("Majonēze  | 1,00€");
 		merceMajon.setBackground(new Color(70, 70, 70));
 		merceMajon.setForeground(new Color(180, 180, 180));
 		merceMajon.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		merceMajon.setBounds(514, 99, 109, 23);
+		merceMajon.setBounds(514, 99, 120, 23);
 		picasMerces.add(merceMajon);
+		merceMajon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(merceMajon.isSelected()) {
+					Merce = 1.00;
+				}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
 		contentPane.add(merceMajon);
 		
 		JCheckBox skinkisPap = new JCheckBox("Šķiņķis");
@@ -108,6 +133,16 @@ public class Sutisana extends JFrame {
 		skinkisPap.setForeground(new Color(180, 180, 180));
 		skinkisPap.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		skinkisPap.setBounds(274, 73, 81, 23);
+		skinkisPap.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			if(skinkisPap.isSelected()) {
+					Piedevas = Piedevas + 0.50;
+				} else {
+					Piedevas = Piedevas - 0.50;
+				}
+			CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+			}
+		});
 		contentPane.add(skinkisPap);
 		
 		JCheckBox siersPap = new JCheckBox("Siers");
@@ -115,6 +150,16 @@ public class Sutisana extends JFrame {
 		siersPap.setForeground(new Color(180, 180, 180));
 		siersPap.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		siersPap.setBounds(274, 99, 81, 23);
+		siersPap.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(siersPap.isSelected()) {
+						Piedevas = Piedevas + 0.50;
+					} else {
+						Piedevas = Piedevas - 0.50;
+					}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
 		contentPane.add(siersPap);
 		
 		JCheckBox ananassPap = new JCheckBox("Ananass");
@@ -122,6 +167,16 @@ public class Sutisana extends JFrame {
 		ananassPap.setForeground(new Color(180, 180, 180));
 		ananassPap.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		ananassPap.setBounds(274, 125, 81, 23);
+		ananassPap.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(ananassPap.isSelected()) {
+						Piedevas = Piedevas + 0.50;
+					} else {
+						Piedevas = Piedevas - 0.50;
+					}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
 		contentPane.add(ananassPap);
 		
 		JCheckBox pepperoniPap = new JCheckBox("Pepperoni");
@@ -129,6 +184,16 @@ public class Sutisana extends JFrame {
 		pepperoniPap.setForeground(new Color(180, 180, 180));
 		pepperoniPap.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		pepperoniPap.setBounds(357, 73, 81, 23);
+		pepperoniPap.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(pepperoniPap.isSelected()) {
+						Piedevas = Piedevas + 0.50;
+					} else {
+						Piedevas = Piedevas - 0.50;
+					}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
 		contentPane.add(pepperoniPap);
 		
 		JCheckBox bekonsPap = new JCheckBox("Bekons");
@@ -136,9 +201,37 @@ public class Sutisana extends JFrame {
 		bekonsPap.setForeground(new Color(180, 180, 180));
 		bekonsPap.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		bekonsPap.setBounds(357, 98, 81, 23);
+		bekonsPap.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(bekonsPap.isSelected()) {
+						Piedevas = Piedevas + 0.50;
+					} else {
+						Piedevas = Piedevas - 0.50;
+					}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
 		contentPane.add(bekonsPap);
+
+		JCheckBox senesPap = new JCheckBox("Sēnes");
+		senesPap.setForeground(new Color(180, 180, 180));
+		senesPap.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		senesPap.setBackground(new Color(70, 70, 70));
+		senesPap.setBounds(357, 125, 81, 23);
+		senesPap.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(senesPap.isSelected()) {
+						Piedevas = Piedevas + 0.50;
+					} else {
+						Piedevas = Piedevas - 0.50;
+					}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
+		contentPane.add(senesPap);
 		
 		CenaBOX = new JTextField();
+		CenaBOX.setText("0,00€");
 		CenaBOX.setForeground(new Color(180, 180, 180));
 		CenaBOX.setBackground(new Color(50, 50, 50));
 		CenaBOX.setEditable(false);
@@ -218,15 +311,51 @@ public class Sutisana extends JFrame {
 		uzVietas.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		uzVietas.setBounds(514, 195, 109, 23);
 		esanasVieta.add(uzVietas);
+		uzVietas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(uzVietas.isSelected()) {
+					Piegade = 0;
+				}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
 		contentPane.add(uzVietas);
-		
 		JRadioButton piegUzMajam = new JRadioButton("Piegāde uz mājām +1,99€");
 		piegUzMajam.setBackground(new Color(70, 70, 70));
 		piegUzMajam.setForeground(new Color(180, 180, 180));
 		piegUzMajam.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		piegUzMajam.setBounds(514, 169, 161, 23);
-		esanasVieta.add(piegUzMajam);
-		contentPane.add(piegUzMajam);
+		JRadioButton lidziNemsana = new JRadioButton("Līdzi");
+		lidziNemsana.setBackground(new Color(70, 70, 70));
+		lidziNemsana.setForeground(new Color(180, 180, 180));
+		lidziNemsana.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		lidziNemsana.setBounds(514, 169, 109, 23);
+		esanasVieta.add(lidziNemsana);
+		lidziNemsana.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(lidziNemsana.isSelected()) {
+					Piegade = 0;
+				}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
+		contentPane.add(lidziNemsana);
+		
+		JRadioButton piegUzMajam1 = new JRadioButton("Piegāde uz mājām  | 2,00€");
+		piegUzMajam1.setBackground(new Color(70, 70, 70));
+		piegUzMajam1.setForeground(new Color(180, 180, 180));
+		piegUzMajam1.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		piegUzMajam1.setBounds(514, 220, 161, 23);
+		esanasVieta.add(piegUzMajam1);
+		piegUzMajam1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(piegUzMajam1.isSelected()) {
+					Piegade = 2.00;
+				}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
+		contentPane.add(piegUzMajam1);
 		
 		JLabel izmeruLabel = new JLabel("Picas izmērs");
 		izmeruLabel.setForeground(new Color(170, 170, 180));
@@ -241,6 +370,14 @@ public class Sutisana extends JFrame {
 		mazPica.setBackground(new Color(70, 70, 70));
 		mazPica.setBounds(25, 48, 131, 23);
 		picasIzmers.add(mazPica);
+		mazPica.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(mazPica.isSelected()) {
+					picasIzm = 6.50;
+				}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
 		contentPane.add(mazPica);
 		
 		JRadioButton vidPica = new JRadioButton("M (vidējā pica) | 8,50€");
@@ -249,6 +386,14 @@ public class Sutisana extends JFrame {
 		vidPica.setBackground(new Color(70, 70, 70));
 		vidPica.setBounds(25, 74, 139, 23);
 		picasIzmers.add(vidPica);
+		vidPica.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(vidPica.isSelected()) {
+					picasIzm = 8.50;
+				}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
 		contentPane.add(vidPica);
 		
 		JRadioButton lielPica = new JRadioButton("L (lielā pica) | 10,50€");
@@ -257,6 +402,14 @@ public class Sutisana extends JFrame {
 		lielPica.setBackground(new Color(70, 70, 70));
 		lielPica.setBounds(25, 100, 131, 23);
 		picasIzmers.add(lielPica);
+		lielPica.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(lielPica.isSelected()) {
+					picasIzm = 10.50;
+				}
+				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
+				}
+			});
 		contentPane.add(lielPica);
 		
 		JTextPane orderLogs = new JTextPane();
@@ -286,13 +439,6 @@ public class Sutisana extends JFrame {
 		//Image image = new ImageIcon(this.getClass().getResource("/Images/test.png")).getImage();
 		//picasIzm.setIcon(new ImageIcon(image));
 		contentPane.add(picasIzm);
-		
-		JCheckBox senesPap = new JCheckBox("Sēnes");
-		senesPap.setForeground(new Color(180, 180, 180));
-		senesPap.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		senesPap.setBackground(new Color(70, 70, 70));
-		senesPap.setBounds(357, 125, 81, 23);
-		contentPane.add(senesPap);
 		
 		JButton btnAtpakaUzSkumu = new JButton("Atpakaļ uz sākumu");
 		btnAtpakaUzSkumu.addActionListener(new ActionListener() {
