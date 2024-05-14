@@ -422,6 +422,12 @@ public class Sutisana extends JFrame {
 		contentPane.add(orderLogs);
 		
 		JButton btnApstiprintPastjumu = new JButton("Iesniegt pasūtījumu");
+		btnApstiprintPastjumu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Silders_pica pasutijums = new Silders_pica(vards.getText(), uzvards.getText(), Adrese.getText(), telNR.getText(), Double.parseDouble(CenaBOX.getText().replace("€", "").replace(",", ".")));
+                pasutijums.saglPasutijumu();
+			}
+		});
 		btnApstiprintPastjumu.setForeground(new Color(180, 180, 180));
 		btnApstiprintPastjumu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnApstiprintPastjumu.setBackground(new Color(50, 50, 50));
