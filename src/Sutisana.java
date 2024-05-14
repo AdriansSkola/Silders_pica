@@ -423,11 +423,59 @@ public class Sutisana extends JFrame {
 		
 		JButton btnApstiprintPastjumu = new JButton("Iesniegt pasūtījumu");
 		btnApstiprintPastjumu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Silders_pica pasutijums = new Silders_pica(vards.getText(), uzvards.getText(), Adrese.getText(), telNR.getText(), Double.parseDouble(CenaBOX.getText().replace("€", "").replace(",", ".")));
-                pasutijums.saglPasutijumu();
-			}
+		    public void actionPerformed(ActionEvent e) {
+		        String picasIzmStr = "";
+		        if (mazPica.isSelected()) {
+		            picasIzmStr = "S (mazā pica) | 6,50€";
+		        } else if (vidPica.isSelected()) {
+		            picasIzmStr = "M (vidējā pica) | 8,50€";
+		        } else if (lielPica.isSelected()) {
+		            picasIzmStr = "L (lielā pica) | 10,50€";
+		        }
+
+		        String piedevasStr = "";
+		        if (skinkisPap.isSelected()) {
+		            piedevasStr += "Šķiņķis, ";
+		        }
+		        if (siersPap.isSelected()) {
+		            piedevasStr += "Siers, ";
+		        }
+		        if (pepperoniPap.isSelected()) {
+		        	piedevasStr += "Pepperoni, ";
+		        }
+		        if (bekonsPap.isSelected()) {
+		        	piedevasStr += "Bekons, ";
+		        }
+		        if (ananassPap.isSelected()) {
+		        	piedevasStr += "Ananass, ";
+		        }
+		        if (senesPap.isSelected()) {
+		        	piedevasStr += "Sēnes, ";
+		        }
+
+		        String merceStr = "";
+		        if (merceKecups.isSelected()) {
+		            merceStr = "Kečups | 1,00€";
+		        } else if (merceBBQ.isSelected()) {
+		            merceStr = "BBQ | 1,00€";
+		        } else if (merceMajon.isSelected()) {
+		            merceStr = "Majonēze | 1,00€";
+		        }
+
+		        String esanasVietaStr = "";
+		        if (uzVietas.isSelected()) {
+		            esanasVietaStr = "Uz vietas";
+		        } else if (lidziNemsana.isSelected()) {
+		            esanasVietaStr = "Līdzi";
+		        } else if (piegUzMajam1.isSelected()) {
+		            esanasVietaStr = "Piegāde uz mājām | 2,00€";
+		        }
+
+		        Silders_pica pasutijums = new Silders_pica(vards.getText(), uzvards.getText(), Adrese.getText(), telNR.getText(), Double.parseDouble(CenaBOX.getText().replace("€", "").replace(",", ".")), picasIzmStr, piedevasStr, merceStr, esanasVietaStr);
+		        pasutijums.saglPasutijumu();
+		    }
 		});
+
 		btnApstiprintPastjumu.setForeground(new Color(180, 180, 180));
 		btnApstiprintPastjumu.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnApstiprintPastjumu.setBackground(new Color(50, 50, 50));

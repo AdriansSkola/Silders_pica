@@ -4,3 +4,24 @@ Adrese: Tisē iela 13
 Telefona nr.: +371 6969691
 Kopējā cena: 13.5€
 -----------------------------------
+Picas pasūtījums:
+Pasūtītājs: Artūrs Saldors
+Adrese: Sēņu iela 14
+Telefona nr.: +371 22167981
+Picas izmērs: M (vidējā pica) | 8,50€
+Piedevas: Šķiņķis, Siers, Sēnes, 
+Mērce: Kečups | 1,00€
+Ēšanas vieta: Piegāde uz mājām | 2,00€
+Kopējā cena: 13.0€
+-----------------------------------
+Picas pasūtījums:
+Pasūtītājs: awdawtgya awgawgawg
+Adrese: AWgawG
+Telefona nr.: +371
+
+Picas izmērs: L (lielā pica) | 10,50€
+Piedevas: Šķiņķis, Siers, Pepperoni, Bekons, Ananass, Sēnes, 
+Mērce: BBQ | 1,00€
+Ēšanas vieta: Piegāde uz mājām | 2,00€
+Kopējā cena: 16.5€
+-----------------------------------
