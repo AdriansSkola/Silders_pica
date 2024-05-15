@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -464,13 +465,13 @@ public class Sutisana extends JFrame {
 
 		        String esanasVietaStr = "";
 		        if (uzVietas.isSelected()) {
-		            esanasVietaStr = "Uz vietas";
+		            esanasVietaStr = "Uz vietas | 0,00€";
 		        } else if (lidziNemsana.isSelected()) {
-		            esanasVietaStr = "Līdzi";
+		            esanasVietaStr = "Līdzi | 0,00€";
 		        } else if (piegUzMajam1.isSelected()) {
 		            esanasVietaStr = "Piegāde uz mājām | 2,00€";
 		        }
-
+		        
 		        Silders_pica pasutijums = new Silders_pica(vards.getText(), uzvards.getText(), Adrese.getText(), telNR.getText(), Double.parseDouble(CenaBOX.getText().replace("€", "").replace(",", ".")), picasIzmStr, piedevasStr, merceStr, esanasVietaStr);
 		        pasutijums.saglPasutijumu();
 		    }
@@ -507,6 +508,12 @@ public class Sutisana extends JFrame {
 		btnAtpakaUzSkumu.setBackground(new Color(50, 50, 50));
 		btnAtpakaUzSkumu.setBounds(531, 290, 139, 23);
 		contentPane.add(btnAtpakaUzSkumu);
+		
+		JLabel Background = new JLabel("");
+		Background.setBounds(0, 0, 695, 396);
+		//Image back = new ImageIcon(this.getClass().getResource("/Images/background.png")).getImage();
+		//Background.setIcon(new ImageIcon(back));
+		contentPane.add(Background);
 		
 		mazPica.addActionListener(new ActionListener() {
 			@Override

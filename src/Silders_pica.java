@@ -2,6 +2,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.swing.JOptionPane;
+
 public class Silders_pica {
 	
 	// Instance mainīgie
@@ -30,25 +32,25 @@ public class Silders_pica {
 
     public void saglPasutijumu() {
         try {
-            FileWriter fileWriter = new FileWriter("Sutijumi.txt", true); // Ja būs false, tad pārrakstīs visu failu (viss iepriekšējais dzēsīsies)
-            PrintWriter printWriter = new PrintWriter(fileWriter);
+            FileWriter fileW = new FileWriter("Sutijumi.txt", true); // Ja būs false, tad pārrakstīs visu failu (viss iepriekšējais dzēsīsies)
+            PrintWriter printW = new PrintWriter(fileW);
 
-            printWriter.println("Picas pasūtījums:");
-            printWriter.println("Pasūtītājs: " + vards + " " + uzvards);
-            printWriter.println("Adrese: " + adrese);
-            printWriter.println("Telefona nr.: " + telNr);
-            printWriter.println();
-            printWriter.println("Picas izmērs: " + picasIzm);
-            printWriter.println("Piedevas: " + piedevas);
-            printWriter.println("Mērce: " + merce);
-            printWriter.println("Ēšanas vieta: " + esanasVieta);
-            printWriter.println("Kopējā cena: " + cena + "€");
-            printWriter.println("-----------------------------------");
+            printW.println("Picas pasūtījums:");
+            printW.println("Pasūtītājs: " + vards + " " + uzvards);
+            printW.println("Adrese: " + adrese);
+            printW.println("Telefona nr.: " + telNr);
+            printW.println();
+            printW.println("Picas izmērs: " + picasIzm);
+            printW.println("Piedevas ( katra +0,50€): " + piedevas);
+            printW.println("Mērce: " + merce);
+            printW.println("Ēšanas vieta: " + esanasVieta);
+            printW.println("Kopējā cena: " + cena + "€");
+            printW.println("-----------------------------------");
 
-            printWriter.close();
-            System.out.println("Pasūtījums saglabāts veiksmīgi.");
+            printW.close();
+            JOptionPane.showMessageDialog(null, "Pasūtījums saglabāts veiksmīgi!", "Šermando", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException e) {
-            System.out.println("Kļūda, nevarēja saglabāt pasūtījumu: " + e.getMessage());
+        	JOptionPane.showMessageDialog(null, "Radās kļūda! Nevarēja saglabāt pasūtījumu!", "Šermando", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

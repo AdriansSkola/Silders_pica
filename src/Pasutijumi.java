@@ -1,20 +1,19 @@
 import java.awt.Color;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JList;
-import javax.swing.JTextArea;
-import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
-import java.awt.ScrollPane;
-import javax.swing.JButton;
 import java.awt.Font;
-import javax.swing.UIManager;
-import javax.swing.JTextPane;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
+import javax.swing.border.EmptyBorder;
 
 public class Pasutijumi extends JFrame {
 
@@ -53,6 +52,19 @@ public class Pasutijumi extends JFrame {
 		textPane.setForeground(new Color(180, 180, 180));
 		textPane.setBackground(new Color(50, 50, 50));
 		scrollPane.setViewportView(textPane);
+		
+		try {
+            BufferedReader br = new BufferedReader(new FileReader("Sutijumi.txt"));
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                sb.append(line).append("\n");
+            }
+            br.close();
+            textPane.setText(sb.toString());
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Nav vēl veikts neviens pasūtījums!", "Šermando", JOptionPane.WARNING_MESSAGE);
+        }
 		
 		JButton btnDzstDatus = new JButton("Dzēst datus");
 		btnDzstDatus.setForeground(new Color(180, 180, 180));
