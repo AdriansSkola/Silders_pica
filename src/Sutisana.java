@@ -11,11 +11,9 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
 public class Sutisana extends JFrame {
@@ -41,17 +39,6 @@ public class Sutisana extends JFrame {
 			}
 		});
 	}
-	
-	/*
-	 * krāsas:
-	 * #E4B455
-	 * #AF672D
-	 * #886839
-	 * #58483A
-	 * #597718
-	 * #770D15
-	 * #D3B786
-	 */
 
 	public Sutisana() {
 		setTitle("Picas Sistēma");

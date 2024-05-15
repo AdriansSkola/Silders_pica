@@ -41,7 +41,7 @@ public class Silders_pica {
             printW.println("Telefona nr.: " + telNr);
             printW.println();
             printW.println("Picas izmērs: " + picasIzm);
-            printW.println("Piedevas ( katra +0,50€): " + piedevas);
+            printW.println("Piedevas (katra +0,50€): " + piedevas);
             printW.println("Mērce: " + merce);
             printW.println("Ēšanas vieta: " + esanasVieta);
             printW.println("Kopējā cena: " + cena + "€");

@@ -39,19 +39,20 @@ public class Pasutijumi extends JFrame {
 		setResizable(false);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(70, 70, 70));
+		contentPane.setBackground(new Color(222, 201, 177));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(22, 22, 386, 196);
+		scrollPane.setBounds(24, 22, 386, 196);
 		contentPane.add(scrollPane);
 		
 		JTextPane textPane = new JTextPane();
-		textPane.setForeground(new Color(180, 180, 180));
-		textPane.setBackground(new Color(50, 50, 50));
+		textPane.setEditable(false);
+		textPane.setForeground(new Color(0, 0, 0));
+		textPane.setBackground(new Color(208, 186, 149));
 		scrollPane.setViewportView(textPane);
 		
 		// Pasūtījumu nolasītājs
@@ -84,10 +85,10 @@ public class Pasutijumi extends JFrame {
                 }
 			}
 		});
-		btnDzstDatus.setForeground(new Color(180, 180, 180));
+		btnDzstDatus.setForeground(new Color(0, 108, 50));
 		btnDzstDatus.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		btnDzstDatus.setBackground(new Color(50, 50, 50));
-		btnDzstDatus.setBounds(303, 227, 105, 23);
+		btnDzstDatus.setBackground(new Color(208, 186, 149));
+		btnDzstDatus.setBounds(305, 227, 105, 23);
 		contentPane.add(btnDzstDatus);
 		
 		JButton btnAtpaka = new JButton("Atpakaļ");
@@ -98,10 +99,10 @@ public class Pasutijumi extends JFrame {
 				Pasutijumi.this.dispose();
 			}
 		});
-		btnAtpaka.setForeground(new Color(180, 180, 180));
+		btnAtpaka.setForeground(new Color(0, 108, 50));
 		btnAtpaka.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		btnAtpaka.setBackground(new Color(50, 50, 50));
-		btnAtpaka.setBounds(22, 227, 81, 23);
+		btnAtpaka.setBackground(new Color(208, 186, 149));
+		btnAtpaka.setBounds(24, 229, 81, 23);
 		contentPane.add(btnAtpaka);
 	}
 }
