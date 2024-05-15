@@ -5,6 +5,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.SwingConstants;
@@ -35,17 +38,18 @@ public class SakumaFrame extends JFrame {
 		setResizable(false);
 		setBounds(100, 100, 485, 280);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(70, 70, 70));
+		contentPane.setBackground(new Color(222, 201, 177));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Picērija Šermando");
+		lblNewLabel.setBackground(new Color(0, 108, 50));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setForeground(new Color(170, 170, 180));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel.setBounds(161, 32, 137, 14);
+		lblNewLabel.setForeground(new Color(223, 0, 28));
+		lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 23));
+		lblNewLabel.setBounds(0, 30, 485, 30);
 		contentPane.add(lblNewLabel);
 		
 		JButton pasutitPicasBtn = new JButton("Pasūtīt picas");
@@ -56,10 +60,10 @@ public class SakumaFrame extends JFrame {
 				SakumaFrame.this.dispose();
 			}
 		});
-		pasutitPicasBtn.setForeground(new Color(180, 180, 180));
-		pasutitPicasBtn.setBackground(new Color(50, 50, 50));
-		pasutitPicasBtn.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		pasutitPicasBtn.setBounds(105, 146, 106, 23);
+		pasutitPicasBtn.setForeground(new Color(90, 149, 0));
+		pasutitPicasBtn.setBackground(new Color(208, 186, 149));
+		pasutitPicasBtn.setFont(new Font("Segoe UI", Font.BOLD, 16));
+		pasutitPicasBtn.setBounds(175, 99, 137, 30);
 		contentPane.add(pasutitPicasBtn);
 		
 		JButton apskatPasutBtn = new JButton("Apskatīt pasūtījumus");
@@ -70,10 +74,16 @@ public class SakumaFrame extends JFrame {
 				SakumaFrame.this.dispose();
 			}
 		});
-		apskatPasutBtn.setForeground(new Color(180, 180, 180));
-		apskatPasutBtn.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		apskatPasutBtn.setBackground(new Color(50, 50, 50));
-		apskatPasutBtn.setBounds(234, 146, 154, 23);
+		apskatPasutBtn.setForeground(new Color(90, 149, 0));
+		apskatPasutBtn.setFont(new Font("Segoe UI", Font.BOLD, 16));
+		apskatPasutBtn.setBackground(new Color(208, 186, 149));
+		apskatPasutBtn.setBounds(135, 140, 215, 30);
 		contentPane.add(apskatPasutBtn);
+		
+		JLabel background = new JLabel("");
+		background.setBounds(0, 0, 469, 241);
+		Image back = new ImageIcon(this.getClass().getResource("/Images/pizza_race.gif")).getImage();
+		background.setIcon(new ImageIcon(back));
+		contentPane.add(background);
 	}
 }

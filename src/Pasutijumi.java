@@ -54,6 +54,7 @@ public class Pasutijumi extends JFrame {
 		textPane.setBackground(new Color(50, 50, 50));
 		scrollPane.setViewportView(textPane);
 		
+		// Pasūtījumu nolasītājs
 		try {
             BufferedReader br = new BufferedReader(new FileReader("Sutijumi.txt"));
             StringBuilder sb = new StringBuilder();
@@ -67,6 +68,7 @@ public class Pasutijumi extends JFrame {
             JOptionPane.showMessageDialog(null, "Nav vēl veikts neviens pasūtījums! Pasūsījuma fails nepastāv!", "Šermando", JOptionPane.WARNING_MESSAGE);
         }
 		
+		// Poga, kas dzēš datus par pasūtījumiem
 		JButton btnDzstDatus = new JButton("Dzēst datus");
 		btnDzstDatus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -86,7 +88,6 @@ public class Pasutijumi extends JFrame {
 		btnDzstDatus.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnDzstDatus.setBackground(new Color(50, 50, 50));
 		btnDzstDatus.setBounds(303, 227, 105, 23);
-		
 		contentPane.add(btnDzstDatus);
 		
 		JButton btnAtpaka = new JButton("Atpakaļ");
