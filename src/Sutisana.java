@@ -270,7 +270,24 @@ public class Sutisana extends JFrame {
 		telNrLabel.setBounds(25, 353, 81, 14);
 		contentPane.add(telNrLabel);
 		
-		telNR = new JTextField();
+		telNR = new JTextField() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+		    public void replaceSelection(String text) {
+				// Var tikai ciparus un plusiņu
+		        if (!text.matches("[0-9+]")) {
+		            return;
+		        }
+		        // 12 Simbolu garums
+		        if (telNR.getText().length() >= 12) {
+		            return;
+		        }
+		        // Aizstāj tekstu
+		        super.replaceSelection(text);
+		    }
+		};
+
 		telNR.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		telNR.setText("+371");
 		telNR.setForeground(new Color(90, 149, 0));
@@ -278,6 +295,7 @@ public class Sutisana extends JFrame {
 		telNR.setColumns(10);
 		telNR.setBounds(116, 352, 103, 20);
 		contentPane.add(telNR);
+
 		
 		JRadioButton uzVietas = new JRadioButton("Uz vietas");
 		uzVietas.setBackground(new Color(208, 186, 149));
