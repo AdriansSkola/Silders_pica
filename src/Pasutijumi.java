@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -63,14 +64,29 @@ public class Pasutijumi extends JFrame {
             br.close();
             textPane.setText(sb.toString());
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Nav vēl veikts neviens pasūtījums!", "Šermando", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Nav vēl veikts neviens pasūtījums! Pasūsījuma fails nepastāv!", "Šermando", JOptionPane.WARNING_MESSAGE);
         }
 		
 		JButton btnDzstDatus = new JButton("Dzēst datus");
+		btnDzstDatus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				File file = new File("Sutijumi.txt");
+                if (file.exists()) {
+                    if (file.delete()) {
+                        JOptionPane.showMessageDialog(null, "Dati ir veiksmīgi dzēsti!", "Šermando", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Radās kļūda! Nevarēja izdzēst datus!", "Šermando", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Nav datu, ko dzēst!", "Šermando", JOptionPane.WARNING_MESSAGE);
+                }
+			}
+		});
 		btnDzstDatus.setForeground(new Color(180, 180, 180));
 		btnDzstDatus.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnDzstDatus.setBackground(new Color(50, 50, 50));
 		btnDzstDatus.setBounds(303, 227, 105, 23);
+		
 		contentPane.add(btnDzstDatus);
 		
 		JButton btnAtpaka = new JButton("Atpakaļ");
