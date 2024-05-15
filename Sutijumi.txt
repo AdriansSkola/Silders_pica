@@ -1,0 +1,33 @@
+Picas pasūtījums:
+Pasūtītājs: Jēkabs Sveilis
+Adrese: Grants iela 14
+Telefona nr.: +37122198411
+
+Picas izmērs: M (vidējā pica) | 8,50€
+Piedevas (katra +0,50€): Šķiņķis, Siers, Sēnes, 
+Mērce: Kečups | 1,00€
+Ēšanas vieta: Uz vietas | 0,00€
+Kopējā cena: 11.0€
+-----------------------------------
+Picas pasūtījums:
+Pasūtītājs: Haralds Zibens
+Adrese: Valsts iela 54
+Telefona nr.: +37122198411
+
+Picas izmērs: S (mazā pica) | 6,50€
+Piedevas (katra +0,50€): Siers, Pepperoni, Ananass, 
+Mērce: Kečups | 1,00€
+Ēšanas vieta: Līdzi | 0,00€
+Kopējā cena: 9.0€
+-----------------------------------
+Picas pasūtījums:
+Pasūtītājs: Frenks Gvidors
+Adrese: Tisē iela 19
+Telefona nr.: +37129185991
+
+Picas izmērs: L (lielā pica) | 10,50€
+Piedevas (katra +0,50€): Siers, Pepperoni, 
+Mērce: Kečups | 1,00€
+Ēšanas vieta: Piegāde uz mājām | 2,00€
+Kopējā cena: 14.5€
+-----------------------------------

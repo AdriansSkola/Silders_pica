@@ -8,9 +8,9 @@ Picas sūtīšanas sistēma, kura ir noderīga īstās dzīves situācijās. :pi
 - [x] Izveidots pamata UI priekš picas sūtīšanas, sākuma ekrāns un sūtījumu saraksts.
 - [x] Salabots, ka katrā grupā atzīmējās tikai viena poga.
 - [x] Ievietotas vairākas bildes picas izmēriem (S, M, L).
-- [ ] pievienots skaists un atbilstošs fons priekš UI.
+- [x] pievienots skaists un atbilstošs fons priekš UI.
 - [x] Tika ieviesta jauna funkcionalitāte izveidotajā zarā.
 - [x] Saglabā pasūtījumu failā
-- [ ] Pabeigta picas sūtījuma aprēķinātājs.
-- [ ] Ievietots darbs ar failiem.
-- [ ] Pabeigts projekts.
+- [x] Pabeigta picas sūtījuma aprēķinātājs.
+- [x] Ievietots darbs ar failiem.
+- [x] Pabeigts projekts.
