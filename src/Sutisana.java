@@ -11,12 +11,13 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JSpinner;
+import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.border.EmptyBorder;
 
 public class Sutisana extends JFrame {
 
@@ -210,6 +211,8 @@ public class Sutisana extends JFrame {
 			});
 		contentPane.add(senesPap);
 		
+		
+		
 		CenaBOX = new JTextField();
 		CenaBOX.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		CenaBOX.setText("0,00€");
@@ -293,13 +296,11 @@ public class Sutisana extends JFrame {
 		};
 
 		telNR.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		telNR.setText("+371");
 		telNR.setForeground(new Color(90, 149, 0));
 		telNR.setBackground(new Color(208, 186, 149));
 		telNR.setColumns(10);
 		telNR.setBounds(116, 352, 103, 20);
 		contentPane.add(telNR);
-
 		
 		JRadioButton uzVietas = new JRadioButton("Uz vietas");
 		uzVietas.setBackground(new Color(208, 186, 149));
@@ -403,7 +404,34 @@ public class Sutisana extends JFrame {
 		
 		JButton btnApstiprintPastjumu = new JButton("Iesniegt pasūtījumu");
 		btnApstiprintPastjumu.addActionListener(new ActionListener() {
+			
 		    public void actionPerformed(ActionEvent e) {
+		    	
+		    	if (!mazPica.isSelected() && !vidPica.isSelected() && !lielPica.isSelected()) {
+		            JOptionPane.showMessageDialog(null, "Izvēlieties picas izmēru!", "Šermando", JOptionPane.ERROR_MESSAGE);
+		            return;
+		        }
+		    	
+		    	if (!skinkisPap.isSelected() && !siersPap.isSelected() && !pepperoniPap.isSelected() && !bekonsPap.isSelected() && !ananassPap.isSelected() && !senesPap.isSelected()) {
+		            JOptionPane.showMessageDialog(null, "Izvēlieties vismaz vienu picas piedevu!", "Šermando", JOptionPane.ERROR_MESSAGE);
+		            return;
+		        }
+		    	
+		    	if (!merceKecups.isSelected() && !merceBBQ.isSelected() && !merceMajon.isSelected()) {
+		            JOptionPane.showMessageDialog(null, "Izvēlieties picas mērci!", "Šermando", JOptionPane.ERROR_MESSAGE);
+		            return;
+		        }
+		    	
+		    	if (!uzVietas.isSelected() && !lidziNemsana.isSelected() && !piegUzMajam1.isSelected()) {
+		            JOptionPane.showMessageDialog(null, "Izvēlieties ēšanas vietu!", "Šermando", JOptionPane.ERROR_MESSAGE);
+		            return;
+		        }
+		    	
+		    	if (!laukAizpild()) {
+		            JOptionPane.showMessageDialog(Sutisana.this, "Aizpildiet visus laukus!", "Šermando", JOptionPane.ERROR_MESSAGE);
+		            return;
+		        }
+		    	
 		        String picasIzmStr = "";
 		        if (mazPica.isSelected()) {
 		            picasIzmStr = "S (mazā pica) | 6,50€";
@@ -574,4 +602,8 @@ public class Sutisana extends JFrame {
 			}
 		});
 	}
+	
+	boolean laukAizpild() {
+        return !vards.getText().isEmpty() && !uzvards.getText().isEmpty() && !Adrese.getText().isEmpty() && !telNR.getText().isEmpty();
+    }
 }
