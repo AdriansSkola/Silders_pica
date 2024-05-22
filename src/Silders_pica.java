@@ -16,9 +16,10 @@ public class Silders_pica {
     private String piedevas;
     private String merce;
     private String esanasVieta;
+    private int picasDaudzums;
 
     // Konstruktors
-    public Silders_pica(String vards, String uzvards, String adrese, String telNr, double cena, String picasIzm, String piedevas, String merce, String esanasVieta) {
+    public Silders_pica(String vards, String uzvards, String adrese, String telNr, double cena, String picasIzm, String piedevas, String merce, String esanasVieta, int picasDaudzums) {
         this.vards = vards;
         this.uzvards = uzvards;
         this.adrese = adrese;
@@ -28,6 +29,7 @@ public class Silders_pica {
         this.piedevas = piedevas;
         this.merce = merce;
         this.esanasVieta = esanasVieta;
+        this.picasDaudzums = picasDaudzums;
     }
 
     public void saglPasutijumu() {
@@ -44,7 +46,9 @@ public class Silders_pica {
             printW.println("Piedevas (katra +0,50€): " + piedevas);
             printW.println("Mērce: " + merce);
             printW.println("Ēšanas vieta: " + esanasVieta);
-            printW.println("Kopējā cena: " + cena + "€");
+            printW.println("Picas Daudzums: " + picasDaudzums);
+            printW.println("Kopējā cena par vienu: " + cena + "€");
+            printW.println("Kopējā visu cena: " + (cena * picasDaudzums - 2 * picasDaudzums + 2) + "€");
             printW.println("-----------------------------------");
 
             printW.close();

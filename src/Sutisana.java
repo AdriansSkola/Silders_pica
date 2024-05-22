@@ -15,6 +15,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
 
 public class Sutisana extends JFrame {
 
@@ -26,6 +28,8 @@ public class Sutisana extends JFrame {
 	private JTextField uzvards;
 	private JTextField Adrese;
 	private JTextField telNR;
+	private JSpinner picasDaudz;
+	
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -447,7 +451,8 @@ public class Sutisana extends JFrame {
 		            esanasVietaStr = "Piegāde uz mājām | 2,00€";
 		        }
 		        
-		        Silders_pica pasutijums = new Silders_pica(vards.getText(), uzvards.getText(), Adrese.getText(), telNR.getText(), Double.parseDouble(CenaBOX.getText().replace("€", "").replace(",", ".")), picasIzmStr, piedevasStr, merceStr, esanasVietaStr);
+		        int picasDaudzums = (Integer) picasDaudz.getValue();
+		        Silders_pica pasutijums = new Silders_pica(vards.getText(), uzvards.getText(), Adrese.getText(), telNR.getText(), Double.parseDouble(CenaBOX.getText().replace("€", "").replace(",", ".")), picasIzmStr, piedevasStr, merceStr, esanasVietaStr, picasDaudzums);
 		        pasutijums.saglPasutijumu();
 		    }
 		});
@@ -532,6 +537,18 @@ public class Sutisana extends JFrame {
 		vietaLabel.setForeground(new Color(0, 108, 50));
 		vietaLabel.setBackground(new Color(150, 150, 150));
 		vietaLabel.setFont(new Font("Segoe UI", Font.BOLD, 16));
+		
+		picasDaudz = new JSpinner();
+		picasDaudz.setModel(new SpinnerNumberModel(1, 1, 20, 1));
+		picasDaudz.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+		picasDaudz.setBounds(610, 266, 35, 20);
+		contentPane.add(picasDaudz);
+		
+		JLabel PicasLabel = new JLabel("Picas Daudzums:");
+		PicasLabel.setForeground(new Color(211, 82, 1));
+		PicasLabel.setFont(new Font("Segoe UI", Font.BOLD, 14));
+		PicasLabel.setBounds(483, 267, 126, 14);
+		contentPane.add(PicasLabel);
 		
 		mazPica.addActionListener(new ActionListener() {
 			@Override
