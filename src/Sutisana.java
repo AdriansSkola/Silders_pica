@@ -258,12 +258,14 @@ public class Sutisana extends JFrame {
 		contentPane.add(uzvards);
 		
 		JLabel adreseLabel = new JLabel("Adrese:");
+		adreseLabel.setEnabled(false);
 		adreseLabel.setForeground(new Color(0, 108, 50));
 		adreseLabel.setFont(new Font("Segoe UI", Font.BOLD, 14));
 		adreseLabel.setBounds(25, 321, 58, 14);
 		contentPane.add(adreseLabel);
 		
 		Adrese = new JTextField();
+		Adrese.setEnabled(false);
 		Adrese.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		Adrese.setForeground(new Color(90, 149, 0));
 		Adrese.setBackground(new Color(208, 186, 149));
@@ -272,6 +274,7 @@ public class Sutisana extends JFrame {
 		contentPane.add(Adrese);
 		
 		JLabel telNrLabel = new JLabel("Telefona nr.");
+		telNrLabel.setEnabled(false);
 		telNrLabel.setForeground(new Color(0, 108, 50));
 		telNrLabel.setFont(new Font("Segoe UI", Font.BOLD, 14));
 		telNrLabel.setBounds(25, 353, 81, 14);
@@ -294,6 +297,7 @@ public class Sutisana extends JFrame {
 		        super.replaceSelection(text);
 		    }
 		};
+		telNR.setEnabled(false);
 
 		telNR.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		telNR.setForeground(new Color(90, 149, 0));
@@ -312,6 +316,12 @@ public class Sutisana extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(uzVietas.isSelected()) {
 					Piegade = 0;
+					adreseLabel.setEnabled(false);
+					Adrese.setText("-");
+					Adrese.setEnabled(false);
+					telNrLabel.setEnabled(false);
+					telNR.setText("-");
+					telNR.setEnabled(false);
 				}
 				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
 				}
@@ -332,6 +342,12 @@ public class Sutisana extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(lidziNemsana.isSelected()) {
 					Piegade = 0;
+					adreseLabel.setEnabled(false);
+					Adrese.setText("-");
+					Adrese.setEnabled(false);
+					telNrLabel.setEnabled(false);
+					telNR.setText("-");
+					telNR.setEnabled(false);
 				}
 				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
 				}
@@ -348,6 +364,12 @@ public class Sutisana extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(piegUzMajam1.isSelected()) {
 					Piegade = 2.00;
+					adreseLabel.setEnabled(true);
+					Adrese.setText("");
+					Adrese.setEnabled(true);
+					telNrLabel.setEnabled(true);
+					telNR.setText("");
+					telNR.setEnabled(true);
 				}
 				CenaBOX.setText(String.format("%.2f",(picasIzm+Piedevas+Merce+Piegade))+"€");
 				}
@@ -482,6 +504,10 @@ public class Sutisana extends JFrame {
 		        int picasDaudzums = (Integer) picasDaudz.getValue();
 		        Silders_pica pasutijums = new Silders_pica(vards.getText(), uzvards.getText(), Adrese.getText(), telNR.getText(), Double.parseDouble(CenaBOX.getText().replace("€", "").replace(",", ".")), picasIzmStr, piedevasStr, merceStr, esanasVietaStr, picasDaudzums);
 		        pasutijums.saglPasutijumu();
+		        
+		        SakumaFrame sakumaFrame = new SakumaFrame();
+				sakumaFrame.setVisible(true); 
+				Sutisana.this.dispose();
 		    }
 		});
 
